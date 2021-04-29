@@ -1,0 +1,24 @@
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE user_data (
+  id INT NOT NULL AUTO_INCREMENT,
+  userID int NOT NULL,
+  ssn INT,
+  phone_number INT,
+  credit_card INT,
+  mother VARCHAR(255),
+  FOREIGN KEY (userID) REFERENCES users(id),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE websites (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL UNIQUE,
+  url VARCHAR(255) NOT NULL UNIQUE,
+  PRIMARY KEY (id)
+);
